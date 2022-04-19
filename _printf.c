@@ -1,9 +1,9 @@
-#include "main.h"
+#include "holberton.h"
 /**
- * _printf - printf
- * @format: const char pointer
- * Description: this functions implements some prinf functions
- * Return: no of character to be printed
+ *_printf - printf
+ *@format: const char pointer
+ *Description: this functions implement some functions of printf
+ *Return: num of characteres printed
  */
 int _printf(const char *format, ...)
 {
@@ -15,18 +15,19 @@ int _printf(const char *format, ...)
 		return (-1);
 
 	va_start(arg, format);
-	string = formart;
+	string = format;
 
-	cont = loop_formart(arg, string);
+	cont = loop_format(arg, string);
 
 	va_end(arg);
+	return (cont);
 }
 /**
- * loop_format - loop format
- * @arg: va_list arg
- * @string: pointer form format
- * Description: this function make loop to string ponter
- * Return: no of charcaters printed
+ *loop_format - loop format
+ *@arg: va_list arg
+ *@string: pointer from format
+ *Description: This function make loop tp string pointer
+ *Return: num of characteres printed
  */
 int loop_format(va_list arg, const char *string)
 {
@@ -73,10 +74,10 @@ int loop_format(va_list arg, const char *string)
 }
 /**
  * check_percent - call function manager
- * @flag: value by reference
- * @aux: character
- * Description: This function print % pear
- * Return: 1 if % is printed
+ *@flag: value by reference
+ *@aux: character
+ *Description: This function print % pear
+ *Return: 1 if % is printed
  */
 int check_percent(int *flag, char aux)
 {
@@ -92,13 +93,15 @@ int check_percent(int *flag, char aux)
 	}
 	return (cont);
 }
+
 /**
  * call_function_manager - call function manager
- * @aux: character parameter
- * @arg: va_list arg
- * Description: This function call function manager
- * Return: num of character printed
+ *@aux: character parameter
+ *@arg: va_list arg
+ *Description: This function call function manager
+ *Return: num of characteres printed
  */
+
 int call_function_manager(char aux, va_list arg)
 {
 	int cont = 0;
